@@ -19,7 +19,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  let playerSelection = playerSelection.toLowerCase();
+  playerSelection = playerSelection.toLowerCase();
 
   if (playerSelection === computerSelection) {
     return "Tie!";
