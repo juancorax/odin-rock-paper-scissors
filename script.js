@@ -43,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const buttonsContainer = document.querySelector("#buttons-container");
+const results = document.querySelector("#results");
 
 // Event delegation
 buttonsContainer.addEventListener("click", (event) => {
@@ -50,15 +51,15 @@ buttonsContainer.addEventListener("click", (event) => {
 
   switch (target.id) {
     case "rock":
-      console.log(playRound("rock", getComputerChoice()));
+      results.textContent = playRound("rock", getComputerChoice());
       break;
 
     case "paper":
-      console.log(playRound("paper", getComputerChoice()));
+      results.textContent = playRound("paper", getComputerChoice());
       break;
 
     case "scissors":
-      console.log(playRound("scissors", getComputerChoice()));
+      results.textContent = playRound("scissors", getComputerChoice());
       break;
   }
 });
