@@ -57,6 +57,24 @@ function playGame() {
     }
   }
 
+  function addRestartButton() {
+    const restartButton = document.createElement("button");
+    const body = document.querySelector("body");
+
+    restartButton.textContent = "Restart";
+    restartButton.addEventListener("click", () => {
+      playerScore = 0;
+      computerScore = 0;
+
+      score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+      results.textContent = "";
+
+      body.removeChild(restartButton);
+    });
+
+    body.appendChild(restartButton);
+  }
+
   let playerScore = 0;
   let computerScore = 0;
 
@@ -79,6 +97,7 @@ function playGame() {
 
           if (playerScore >= 5 || computerScore >= 5) {
             results.textContent = getTheWinner();
+            addRestartButton();
           }
         }
         break;
@@ -90,6 +109,7 @@ function playGame() {
 
           if (playerScore >= 5 || computerScore >= 5) {
             results.textContent = getTheWinner();
+            addRestartButton();
           }
         }
         break;
@@ -101,6 +121,7 @@ function playGame() {
 
           if (playerScore >= 5 || computerScore >= 5) {
             results.textContent = getTheWinner();
+            addRestartButton();
           }
         }
         break;
